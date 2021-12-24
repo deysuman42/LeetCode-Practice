@@ -13,12 +13,8 @@ class Solution:
         
         for k, v in h.items():
             out += [k] * v
-        # out += h.keys()
+        
         return out
-        # for x in h:
-        #     print(x[0])
-        #     out += x[0]
-        # return out
-      
+        
       
         
