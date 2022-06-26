@@ -1,14 +1,13 @@
-from collections import defaultdict
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         
-        h = defaultdict(int)
+        h = {}
         
         if len(s) != len(t):
             return False
         
         for i in s:
-            h[i] += 1
+            h[i] = h.get(i, 0) + 1
         
         for i in t:
             if i not in h:
