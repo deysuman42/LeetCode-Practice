@@ -1,6 +1,9 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         
+        # Time O(n)
+        # Space O(1) - No matter how long s and t are going to be, counter length does not change because of English letters so O(1) is constant
+        
         h = {}
         
         if len(s) != len(t):
