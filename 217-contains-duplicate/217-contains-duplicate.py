@@ -1,9 +1,11 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         
-        h = collections.Counter(nums)
-        for i in h.values():
-            if i > 1:
+        h = {}
+        for i in nums:
+            if i in h:
                 return True
+            else:
+                h[i] = 1
         return False
-      
+           
