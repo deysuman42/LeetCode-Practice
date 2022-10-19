@@ -1,6 +1,7 @@
 # Write your MySQL query statement below
 
 
+# Solution 1 - Union
 select
   product_id,
   'store1' as store,
@@ -27,3 +28,5 @@ from
   products
 where
   store3 is not null
+
+
