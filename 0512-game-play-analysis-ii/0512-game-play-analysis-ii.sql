@@ -1,26 +1,26 @@
 # Write your MySQL query statement below
 
 # Solution 1 - rank()
-# select
-#   player_id,
-#   device_id
-# from
-#   (
-#     select
-#       player_id,
-#       device_id,
-#       rank() over (
-#         partition by player_id
-#         order by
-#           event_date
-#       ) as rnk
-#     from
-#       activity
-#   ) x
-# where
-#   rnk = 1
+select
+  player_id,
+  device_id
+from
+  (
+    select
+      player_id,
+      device_id,
+      rank() over (
+        partition by player_id
+        order by
+          event_date
+      ) as rnk
+    from
+      activity
+  ) x
+where
+  rnk = 1
 
 
 
 # Solution 2 - first_value()
-select distinct player_id, first_value(device_id)  over(partition by player_id order by event_date) as 'device_id'  from Activity;
+# select distinct player_id, first_value(device_id)  over(partition by player_id order by event_date) as 'device_id'  from Activity;
